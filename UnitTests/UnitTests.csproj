@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{54173432-7C69-4B19-ACF5-0AF04BA972F0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>UnitTests</RootNamespace>
+    <AssemblyName>UnitTests</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="netextender, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\NetExtender\netextender.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.5.0.9122, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\NUnit\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="Rhino.Mocks, Version=3.6.0.0, Culture=neutral, PublicKeyToken=0b3305902db7183f">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\RhinoMocks\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Encryption\EncryptionManager_Tests.cs" />
+    <Compile Include="Encryption\XOREncryption_Tests.cs" />
+    <Compile Include="Plugins\AREPlugin_Tests.cs" />
+    <Compile Include="Plugins\BIFPlugin_Tests.cs" />
+    <Compile Include="Plugins\IDSPlugin_Tests.cs" />
+    <Compile Include="Plugins\TISPlugin_Tests.cs" />
+    <Compile Include="Plugins\TwoDAPlugin_Tests.cs" />
+    <Compile Include="Plugins\WEDPlugin_Tests.cs" />
+    <Compile Include="Streams\EncryptedByteStream_Tests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Infinity.Encryption\Infinity.Encryption.csproj">
+      <Project>{0E5F06D5-0FB8-4C9B-BA92-60CFD11BA37E}</Project>
+      <Name>Infinity.Encryption</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infinity.Injection\Infinity.Injection.csproj">
+      <Project>{CA29469B-7564-4F1B-AE3E-5B445EC3C754}</Project>
+      <Name>Infinity.Injection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infinity.Plugins\Infinity.Plugins.csproj">
+      <Project>{7122F8CE-9902-42A0-B7BA-A03A3DE7664F}</Project>
+      <Name>Infinity.Plugins</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infinity\Infinity.csproj">
+      <Project>{8B180618-8CCC-431F-AD3D-B17C1846D7E2}</Project>
+      <Name>Infinity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TestCommon\TestCommon.csproj">
+      <Project>{E71B0E0F-7D75-4ECD-B64F-C18857874544}</Project>
+      <Name>TestCommon</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Structures\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7122F8CE-9902-42A0-B7BA-A03A3DE7664F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Infinity.Plugins</RootNamespace>
+    <AssemblyName>Infinity.Plugins</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="netextender, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\NetExtender\netextender.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ARE\AREActor.cs" />
+    <Compile Include="ARE\AREAmbient.cs" />
+    <Compile Include="ARE\AREAnimation.cs" />
+    <Compile Include="ARE\AREAutomapNote.cs" />
+    <Compile Include="ARE\AREContainer.cs" />
+    <Compile Include="ARE\AREDescriptor.cs" />
+    <Compile Include="ARE\AREDoor.cs" />
+    <Compile Include="ARE\AREItem.cs" />
+    <Compile Include="ARE\AREPlugin.cs" />
+    <Compile Include="ARE\AREPoint.cs" />
+    <Compile Include="ARE\AREProjectileTrap.cs" />
+    <Compile Include="ARE\ARERect.cs" />
+    <Compile Include="ARE\ARERegion.cs" />
+    <Compile Include="ARE\ARERestInterruption.cs" />
+    <Compile Include="ARE\ARESongEntry.cs" />
+    <Compile Include="ARE\ARESpawnPoints.cs" />
+    <Compile Include="ARE\AREEntrance.cs" />
+    <Compile Include="ARE\ARETiledObject.cs" />
+    <Compile Include="ARE\ARETrap.cs" />
+    <Compile Include="ARE\AREVariable.cs" />
+    <Compile Include="BIF\BIFResource.cs" />
+    <Compile Include="BIF\BIFDescriptor.cs" />
+    <Compile Include="BIF\BIFPlugin.cs" />
+    <Compile Include="BIF\BIFFileEntry.cs" />
+    <Compile Include="BIF\BIFTileEntry.cs" />
+    <Compile Include="IDS\IDSResource.cs" />
+    <Compile Include="IDS\IDSPlugin.cs" />
+    <Compile Include="IMapper.cs" />
+    <Compile Include="IPlugin.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TIS\TISColour.cs" />
+    <Compile Include="TIS\TISDescriptor.cs" />
+    <Compile Include="TIS\TISPlugin.cs" />
+    <Compile Include="TIS\TISTile.cs" />
+    <Compile Include="TwoDA\TwoDAResource.cs" />
+    <Compile Include="TwoDA\TwoDAPlugin.cs" />
+    <Compile Include="TwoDA\TwoDARow.cs" />
+    <Compile Include="WED\WEDDescriptor.cs" />
+    <Compile Include="WED\WEDDoor.cs" />
+    <Compile Include="WED\WEDOverlay.cs" />
+    <Compile Include="WED\WEDPlugin.cs" />
+    <Compile Include="WED\WEDPolygon.cs" />
+    <Compile Include="WED\WEDSecondDescriptor.cs" />
+    <Compile Include="WED\WEDTilemap.cs" />
+    <Compile Include="WED\WEDVertice.cs" />
+    <Compile Include="WED\WEDWallGroup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Infinity.Encryption\Infinity.Encryption.csproj">
+      <Project>{0E5F06D5-0FB8-4C9B-BA92-60CFD11BA37E}</Project>
+      <Name>Infinity.Encryption</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infinity\Infinity.csproj">
+      <Project>{8B180618-8CCC-431F-AD3D-B17C1846D7E2}</Project>
+      <Name>Infinity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
